@@ -1,0 +1,17 @@
+.store-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.store-btn {
+    border: 3px solid #000;
+    margin: .5rem;
+    padding: 3px;
+    border-radius: 25%;
+    background: radial-gradient(circle at top, #ffffff80, transparent), linear-gradient(to bottom, #f2f2f2, #888888);
+    box-shadow: 5px 5px 10px #222222;
+    width: 5rem;
+    text-align: center;
+}

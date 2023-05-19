@@ -1,0 +1,21 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 5rem;
+    position: sticky;
+    z-index: 100;
+}
+
+.nav-title {
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 3px;
+    font-style: italic;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-evenly;
+    width: 25%;
+}

@@ -1,0 +1,29 @@
+.card-container {
+    margin-left: 20rem;
+    display: grid;
+    width: 900px;
+    grid-template-columns: repeat(2, 300px);
+    grid-gap: 100px;
+}
+
+.card {
+    max-width: 20rem;
+    height: 20rem;
+    text-align: center;
+}
+
+.card-img {
+    width: 18rem;
+    height: 10rem;
+    object-fit: cover;
+    object-position: top;
+    overflow: hidden;
+    padding-top: 2px;
+    border-radius: 5%;
+}
+
+.card-title {
+    font-size: large;
+    font-weight: bold;
+    margin-top: 2px;
+}

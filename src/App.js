@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import Navbar from './navbar/Navbar'
+import Query from './store/query/Query';
+import RawData from './store/rawdata/RawData';
+import BaseCard from './store/storecards/BaseCard'
+import { Counter } from './features/counter/Counter';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+      <Navbar />
+      <Routes>
+        <Route path="/store/*" element={<Query />} />
+        <Route path="/counter/*" element={<Counter />} />
+        <Route path="/store/raw" element={<RawData />} />
+        <Route path="/store/basic" element={<BaseCard />} />
+      </Routes>
+      
     </div>
   );
 }
