@@ -8,15 +8,17 @@ export function Counter() {
 
     return (
         <div className='counter-page'>
-            <div>
+            <div className='container'>
+                <span className='count'>{count}</span>
                 <button
+                    className='button'
                     aria-label='Increment value'
                     onClick={() => dispatch(increment())}
                 >
                     Increment
                 </button>
-                <span>{count}</span>
                 <button
+                    className='button'
                     aria-label='Decrement value'
                     onClick={() => dispatch(decrement())}
                 >

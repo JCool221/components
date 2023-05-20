@@ -1,3 +1,33 @@
 .counter-page {
-    background-color: purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 15rem;
+}
+
+.count {
+    font-size: 4rem;
+
+}
+
+.button {
+    width: 5rem;
+    height: 2rem;
+    background-color: var(--accent1);
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px;
+    border: 2px solid black;
+}
+
+.button:hover {
+    background-color: var(--accent2);
+    font-size: 90%;
 }
