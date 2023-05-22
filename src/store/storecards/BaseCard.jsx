@@ -3,7 +3,13 @@ import './basic.css'
 
 
 function BaseCard() {
-    const data = useSelector((state) => state.query.data.products)
+    const data = useSelector((state) => {
+        if (state.query.data && state.query.data.length > 0) {
+            return state.query.data.products
+        } else {
+            return JSON.parse(localStorage.getItem('data')).products
+        }
+    })
     const checkHeight = (event) => {
         const { naturalHeight, naturalWidth } = event.target;
         const tallImage = naturalHeight >= 2 * naturalWidth;
