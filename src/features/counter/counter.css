@@ -25,9 +25,31 @@
     border-radius: 5px;
     box-shadow: 5px 5px 10px;
     border: 2px solid black;
+    margin: 1rem;
 }
 
 .button:hover {
     background-color: var(--accent2);
     font-size: 90%;
+}
+
+.button:active{
+    border: 3px solid black;
+    box-shadow: 1px 1px 5px;
+}
+
+.error {
+visibility: hidden;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+ 
+.counter-input {
+    scale: 110%;
+    margin: 1rem;
 }

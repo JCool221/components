@@ -1,0 +1,19 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+    selection: null,
+}
+
+export const selectionSlice = createSlice({
+    name: 'selection',
+    initialState,
+    reducers: {
+        setSelection: (state, action) => {
+            state.selection = action.payload;
+        }
+    }
+})
+
+export const {setSelection} = selectionSlice
+
+export default selectionSlice.reducer
