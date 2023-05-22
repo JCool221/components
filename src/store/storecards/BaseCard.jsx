@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import GetSome from '../getsomebtn/GetSome';
 import './basic.css'
 
 
@@ -7,15 +8,28 @@ function BaseCard() {
         if (state.query.data && state.query.data.length > 0) {
             return state.query.data.products
         } else {
-            return JSON.parse(localStorage.getItem('data')).products
+            const localData = localStorage.getItem('data')
+            if (localData && localData.length> 0){
+              return JSON.parse(localData).products
+            } else {
+              return [];
+            }
+          }
+        })
+        const checkHeight = (event) => {
+            const { naturalHeight, naturalWidth } = event.target;
+            const tallImage = naturalHeight >= 2 * naturalWidth;
+            event.target.style.objectPosition = tallImage ? 'top' : 'center';
         }
-    })
-    const checkHeight = (event) => {
-        const { naturalHeight, naturalWidth } = event.target;
-        const tallImage = naturalHeight >= 2 * naturalWidth;
-        event.target.style.objectPosition = tallImage ? 'top' : 'center';
-    }
-    return (
+        
+          if (data.length === 0) {
+            return (
+              <div>
+                <GetSome />
+              </div>
+            )
+          } else
+        return (
         <div className='card-container'>
             {data.map((item) => (
 
