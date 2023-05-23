@@ -14,6 +14,6 @@ export const selectionSlice = createSlice({
     }
 })
 
-export const {setSelection} = selectionSlice
+export const {setSelection} = selectionSlice.actions
 
 export default selectionSlice.reducer

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 
-function Selection() {
+function Selection() {  
     const data = useSelector((state) => {
         return state.selection
     })

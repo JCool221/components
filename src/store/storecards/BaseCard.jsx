@@ -1,13 +1,14 @@
 import { useSelector, useDispatch } from 'react-redux';
-import setSelection from '../query/selectionSlice'
+import { setSelection } from '../query/selectionSlice'
 import GetSome from '../getsomebtn/GetSome';
 import './basic.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from "@fortawesome/free-solid-svg-icons"
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function BaseCard() {
     const dispatch = useDispatch();
+    let navigate = useNavigate();
 
     const data = useSelector((state) => {
         if (state.query.data && state.query.data.length > 0) {
@@ -32,7 +33,7 @@ function BaseCard() {
         let selection = data[id]
         console.log(selection)
         dispatch(setSelection(selection));
-        
+        navigate(`/${id}`)
     }
 
     if (data.length === 0) {
@@ -51,19 +52,18 @@ function BaseCard() {
                         key={item.id}
                         onClick={() => select(item.id)}
                     >
-                        <img
-                            className='card-img'
-                            src={item.thumbnail}
-                            onLoad={checkHeight}
-                            alt={`Image of ${item.title}`}
-                        />
-                        <p className='card-title'>{item.title}</p>
-                        <p>${item.price}</p>
-                        <p>
-                            {item.rating}
-                            <FontAwesomeIcon icon={faStar} />
-                        </p>
-
+                            <img
+                                className='card-img'
+                                src={item.thumbnail}
+                                onLoad={checkHeight}
+                                alt={`Image of ${item.title}`}
+                            />
+                            <p className='card-title'>{item.title}</p>
+                            <p>${item.price}</p>
+                            <p>
+                                {item.rating}
+                                <FontAwesomeIcon icon={faStar} />
+                            </p>
                     </div>
                 ))}
 
