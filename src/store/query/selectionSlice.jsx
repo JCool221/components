@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    selection: null,
+    selection: JSON.parse(localStorage.getItem('selection')) || null,
 }
 
 export const selectionSlice = createSlice({
@@ -10,6 +10,7 @@ export const selectionSlice = createSlice({
     reducers: {
         setSelection: (state, action) => {
             state.selection = action.payload;
+            localStorage.setItem('selection', JSON.stringify(action.payload));
         }
     }
 })

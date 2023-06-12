@@ -50,7 +50,7 @@ function BaseCard() {
                     <div
                         className='card'
                         key={item.id}
-                        onClick={() => select(item.id)}
+                        onClick={() => select(item.id-1)}
                     >
                             <img
                                 className='card-img'
